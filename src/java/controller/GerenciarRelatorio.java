@@ -35,6 +35,7 @@ public class GerenciarRelatorio extends HttpServlet {
                 DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");                      
                 java.sql.Date dataFinal = new java.sql.Date(fmt.parse(data).getTime());                  
                 c.setData(dataFinal);
+                session.setAttribute("dataFinal",dataFinal);
                 Double valorDiario = cDAO.buscarValorDiario(dataFinal);
                 session.setAttribute("valorFinal",valorDiario);
                 System.out.println(session.getAttribute("valorFinal"));
@@ -54,6 +55,7 @@ public class GerenciarRelatorio extends HttpServlet {
         out.println("location.href='relatorios.jsp';");
         /*out.println("document.getElementById('valorFinal').style.display =block;");*/
         out.println("document.getElementById('valorFinal').setAttribute('value',valor);");
+         out.println("document.getElementById('idDataCadastro').setAttribute('value',dataFinal);");
         out.println("</script>");
     }
 

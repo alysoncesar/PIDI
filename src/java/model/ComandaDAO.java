@@ -80,7 +80,8 @@ public class ComandaDAO extends DataBaseDAO{
             return false;            
         }
     }
-    
+    /*"SELECT SUM(quantidadeProduto) AS QTDE, idProduto FROM comanda WHERE data = '2022-06-28' GROUP BY idProduto;"*/
+   
     public Double buscarPreco(int idInsumo){
         Double preco = 0.0;
         try{           

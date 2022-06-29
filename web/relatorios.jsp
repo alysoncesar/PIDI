@@ -100,7 +100,7 @@
                         <th>
                             <div>                               
                                 <div>
-                                    <input required type="date" value="" style="max-width: 150px;margin-left: -810px" 
+                                    <input required type="date" value="${dataFinal}" style="max-width: 150px;margin-left: -810px" 
                                         id="idDataCadastro" placeholder="Digite a data" name="data">  
                                     <button type="submit" onclick="buscarValor()"class="btn btn-success">Buscar</button>
                                 </div>                                 
@@ -133,7 +133,7 @@
                             </div>
                         </td> 
                         <td>
-                            <th>ValorTotal das Saidas</th>
+                            <th>ValorTotal das Saidas diario</th>
                             <jsp:useBean class="model.ItemSaidaDAO" id="isDAO"/>
                                 <c:forEach var="is" items="${isDAO.listaValorTotalSaida}">
                                     <tr>
@@ -159,22 +159,12 @@
                   <br>
                   <br>
                   <br>
-                  <th>nome/quantidade comanda</th>
-                    <tr>
-                      <th>Nome</th>
-                      <th>Comandas abertas</th>
-                      
-                    </tr>
-                    <jsp:useBean class="model.UsuarioDAO" id="uDAOLista"/>
-                    <c:forEach var="u" items="${uDAOLista.listaUsuarioComanda}">
-                        <tr>
+                  <th>quantidade comanda abertas</th>
                             <tr>
-                        <td>${u.nome}</td>
                         <td><input id="comandaDiaria" style="border:none;" disabled value="${comandaDiaria}"></td>
                         
                         
                         </tr>
-                    </c:forEach>
                   </thead>
                   <tbody id="table-users">
                   </tbody>
@@ -203,8 +193,6 @@
                         <td>${p.nome}</td>
                         <td>${p.contadorSaida}</td>
                         <td>RS${p.valor}</td>
-                        <td><input id="contadorDiario" style="border:none;" disabled value="${contadorDiario}"></td>
-                        <td><input id="valorDiario" style="border:none;" disabled value="${valorDiario}"></td>
                         
                         
                         </tr>
